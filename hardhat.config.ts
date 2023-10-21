@@ -1,12 +1,13 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import fs from 'fs';
 import "@nomicfoundation/hardhat-chai-matchers"; 
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import "hardhat-deploy";
+import dotenv from 'dotenv';
+dotenv.config();
 
-const mnemonic = fs.readFileSync('.secret').toString();
-const ETHERSCAN_API_KEY = fs.readFileSync('.env').toString();
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const config: HardhatUserConfig = {
   solidity: "0.8.15",
@@ -14,7 +15,7 @@ const config: HardhatUserConfig = {
   networks: {
       hardhat: {
         accounts: {
-          mnemonic: mnemonic,
+          mnemonic: SECRET_KEY,
           accountsBalance: "10000000000000000000000"  // 10,000 ETH
         },
       },
@@ -23,7 +24,7 @@ const config: HardhatUserConfig = {
           chainId: 97,
           // gasPrice: 1000000000, // 20 Gwei
           accounts: {
-            mnemonic: mnemonic,
+            mnemonic: SECRET_KEY,
           },
           saveDeployments: true,
           tags: ["testnet"],
