@@ -1,0 +1,11 @@
+rm -rf cache
+rm -rf artifacts
+npx hardhat compile
+npx hardhat test
+npx hardhat test ./test/ERC20Token.ts --show-stack-traces
+
+npx hardhat run --network testnet scripts/deploy.ts
+
+
+# Compliar para Javascript
+tsc deploy.ts
