@@ -1,3 +1,11 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/BrunoAraujo84/ERC20-Token-Newcoin/blob/main/LICENSE)
+
+![GitHub top language](https://img.shields.io/github/languages/top/BrunoAraujo84/ERC20-Token-Newcoin)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/BrunoAraujo84/ERC20-Token-Newcoin)
+
+![Contribuições bem-vindas](https://img.shields.io/badge/contribuições-bem_vindas-brightgreen.svg?style=flat)
+
 # Desenvolvendo Contratos Inteligente
 
 ### Criação de um Token ERC-20 e contratos de Staking na rede Ethereum
@@ -46,17 +54,17 @@ Desenvolvido por Bruno Araujo, este projeto é uma solução completa para criar
     npm install
     ```
 
-2. **Compilar contratos**
-
-    ```bash
-    npx hardhat compile
-    ```
-
-3. **Limpeza de diretório antes de executar o teste**
+2. **Limpeza de diretório antes de executar o teste**
 
     ```bash
     rm -rf cache
     rm -rf artifacts
+    ```
+
+3. **Compilar contratos**
+
+    ```bash
+    npx hardhat compile
     ```
 
 4. **Realizar testes**
